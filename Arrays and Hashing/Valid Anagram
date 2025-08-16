@@ -1,0 +1,19 @@
+// Approach 1 was to see that whether each character in first String is present in the second string. But the problem in that approach is it doesn't check whether the character appears exactly once or not.
+So CORRECT APPROACH - Convert both the Strings in a character array and then use the JAVA String funtion to check whether both of the Arrays are equal or not
+
+public boolean isAnagram(String s, String t) {
+        int n = s.length();
+        int m = t.length();
+        if (n != m) {
+            return false;
+        }
+        char[] a = s.toCharArray();
+        char[] b = t.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        if (a == b){
+            return true;
+        }
+        return false;
+    }
+} 
