@@ -1,1 +1,31 @@
-// Approach 1 - 
+// Approach 1 - 🧠 Concept
+
+Anagrams are words formed by rearranging the letters of another word.
+
+All anagrams have the same characters with the same frequency.
+
+✅ Approach: Hash Map with Sorted String Key
+
+Idea:
+
+Sort each word → use the sorted word as a key in a hash map.
+
+All anagrams will share the same sorted form.
+
+Steps:
+
+for word in strs:
+    key = ''.join(sorted(word))
+    anagram_map[key].append(word)
+
+
+Time Complexity: O(n * k log k)
+
+n: number of strings
+
+k: max length of a string
+(due to sorting each string)
+
+Space Complexity: O(nk)
+
+For storing grouped anagrams in the hash map
